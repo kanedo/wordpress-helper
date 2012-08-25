@@ -1,4 +1,11 @@
 <?php
+/**
+ * The function returns the HTML for a login form which allows you to login to a certain post type which items all have the same password
+ * 
+ * @param string $posttype The Custom Post Type which is protected
+ * @param string $class one ore more classes to be applied on th form (optional)
+ * @param string $textdomain a custom textdomain for translating some phrases (optional)
+ * */
 function kanedo_show_password_form($posttype, $class = 'kanedo_protected_login', $textdomain = ''){
 	$pages = get_posts(array('post_type' => $posttype, 'post_status' => 'published'));
 	$page_id = $pages[0]->ID;
